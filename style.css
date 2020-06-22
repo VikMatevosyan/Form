@@ -1,0 +1,180 @@
+body {
+    background: blue;
+}
+section {
+    padding: 25px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.signin {
+    width: 30%;
+    height: 50%;
+    padding: 0 15px;
+    background: white;
+    margin-right: 40px;
+}
+.signup {
+    width: 45%;
+    padding: 15px;
+    background: white;
+}
+.img {
+    width: 20%;
+    margin: 0 auto;
+}
+.img img {
+width: 100%;
+}
+.log {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+#login {
+    width: 97%;
+    padding: 6px;
+    border: 2px solid #EEEEEE;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+#password {
+    width: 97%;
+    padding: 6px;
+    border: 2px solid #EEEEEE;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.sign-log {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    width: 100%;
+    padding: 6px 0;
+    background: #0066CC;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.reg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.reg-btn {
+    display: flex;
+}
+.names {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.warning input{
+    border: 1px solid red;
+}
+.warning span {
+    color: red;
+}
+.input {
+    padding: 10px;
+    width: 90%;
+    border: 1px solid grey;
+    border-radius: 6px;
+    outline: none;
+}
+.first-name {
+    width: 49%;
+}
+.last-name {
+    width: 49%;
+}
+h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 35px;
+    font-family: sans-serif;
+}
+h4 {
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+.gender {
+    display: flex;
+    flex-direction: column;
+}
+.gender-inp {
+    margin-bottom: 10px;
+}
+.nick-input {
+    padding: 10px;
+    width: 96%;
+    border-color: grey;
+    border-radius: 6px;
+    outline: none;
+}
+.inform {
+    width: 100%;
+}
+textarea {
+    width: 100%;
+    border: 2px solid green;
+    border-radius: 6px;
+}
+.email {
+    width: 100%;
+}
+.email input {
+    width: 97%;
+    padding: 8px;
+    border-color: grey;
+    border-radius: 6px;
+    outline: none;
+}
+.pass {
+    width: 100%;
+}
+.pass input {
+    width: 97%;
+    padding: 8px;
+    border-color: grey;
+    border-radius: 6px;
+    outline: none;
+}
+.rus {
+    border: 1px solid #337AB7;
+    background: #337AB7;
+    color: white;
+    padding: 8px 20px;
+    border-bottom-left-radius:  4px;
+    border-top-left-radius:  4px;
+    outline: none;
+    cursor: pointer;
+}
+.eng {
+    border: 1px solid #5CB85C;
+    background: #5CB85C;
+    color: white;
+    padding: 8px 20px;
+    border-bottom-right-radius:  4px;
+    border-top-right-radius:  4px;
+    outline: none;
+    cursor: pointer;
+}
+.sign-up {
+    margin-top: 20px;
+    border-top: 1px solid #EEEEEE;
+}
+.sign {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 6px 0;
+    background: #54CC52;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
