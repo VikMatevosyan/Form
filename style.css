@@ -1,5 +1,6 @@
 body {
     background: blue;
+    font-family: sans-serif;
 }
 section {
     padding: 25px 0;
@@ -77,6 +78,9 @@ width: 100%;
 .warning span {
     color: red;
 }
+.warning p {
+    color: red;
+}
 .input {
     padding: 10px;
     width: 90%;
@@ -119,8 +123,11 @@ h4 {
 }
 textarea {
     width: 100%;
-    border: 2px solid green;
+    border: 2px solid gray;
     border-radius: 6px;
+}
+.green {
+    border: 2px solid green;
 }
 .email {
     width: 100%;

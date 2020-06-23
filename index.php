@@ -357,8 +357,8 @@
             <div class="names">
                <div class="first-name">
                    <h4>First name</h4>
-                   <label class="<?= (empty($_REQUEST['first-name']) ||
-                       (strlen($_REQUEST['first-name']) < 2 || strlen($_REQUEST['first-name']) > 30))? "warning" : "" ?>">
+                   <label class="<?= (!empty($_REQUEST) && (empty($_REQUEST['first-name']) ||
+                       (strlen($_REQUEST['first-name']) < 2 || strlen($_REQUEST['first-name']) > 30)))? "warning" : "" ?>">
                        <input type="text" name="first-name" placeholder="Jane"
                               class="input <?= empty($_REQUEST['first-name']) ? "warning" : ""?>"
                               value="<?= !empty($_REQUEST['first-name']) ? $_REQUEST['first-name'] : "" ?>">
@@ -378,7 +378,8 @@
                </div>
                 <div class="last-name">
                     <h4>Last name</h4>
-                    <label for="">
+                    <label class="<?= (!empty($_REQUEST) && (empty($_REQUEST['last-name']) ||
+                            (strlen($_REQUEST['last-name']) < 2 || strlen($_REQUEST['last-name']) > 30)))? "warning" : "" ?>">
                         <input type="text" name="last-name" placeholder="Doe"
                                class="input <?= empty($_REQUEST['last-name']) ? "warning" : ""?>"
                                value="<?= !empty($_REQUEST['last-name']) ? $_REQUEST['last-name'] : ""; ?>">
@@ -399,23 +400,24 @@
             </div>
             <div class="gender">
                 <h4>Gender</h4>
-                <label class="gender-inp"><input type="radio" name="gender">Male</label>
+                <label class="gender-inp"><input type="radio" name="gender" checked>Male</label>
                 <label class="gender-inp"><input type="radio" name="gender">Female</label>
             </div>
             <div class="nick-name">
                     <h4>Your nickname</h4>
-                    <label for="">
+                    <label class="<?= (!empty($_REQUEST) && (empty($_REQUEST['nick-name']) ||
+                            (strlen($_REQUEST['nick-name']) < 2 || strlen($_REQUEST['nick-name']) > 30)))? "warning" : "" ?>">
                         <input type="text" name="nick-name" placeholder="JaneDoe"
                                class="nick-input <?= empty($_REQUEST['nick-name']) ? "warning" : ""?>"
                                value="<?= !empty($_REQUEST['nick-name']) ? $_REQUEST['nick-name'] : ""; ?>">
                         <?php
                         if (!empty($_REQUEST)) {
                             if(empty($_REQUEST['nick-name'])) {
-                                echo "<span>'Username' required.</span>";
+                                echo "<p class='warning'>'Nick name' required.</p>";
                             } else {
                                 $fnlength = strlen($_REQUEST['nick-name']);
                                 if ($fnlength < 3 || $fnlength > 50) {
-                                    echo "<span>'Username' can not be less than 2 and more than 30 characters.</span>";
+                                    echo "<span>'Nick name' can not be less than 2 and more than 30 characters.</span>";
                                 }
                             }
                         }
@@ -431,17 +433,49 @@
             </div>
             <div class="inform">
                 <h4>Information</h4>
-                <textarea rows="3" name="text"></textarea>
+                <textarea rows="3" name="text" class="<?= (!empty($_REQUEST) && (empty($_REQUEST['text']))) ? "green" : "" ?>"></textarea>
                 <span>Tell other users a bit about yourself</span>
             </div>
             <div class="email">
                 <h4>Email</h4>
-                <input type="email" name="email">
+                <label class="<?= (!empty($_REQUEST) && (empty($_REQUEST['email']) ||
+                        (strlen($_REQUEST['email']) < 2 || strlen($_REQUEST['email']) > 30)))? "warning" : "" ?>">
+                    <input type="email" name="email" class="<?= empty($_REQUEST['email']) ? "warning" : ""?>"
+                           value="<?= !empty($_REQUEST['email']) ? $_REQUEST['email'] : ""; ?>">
+                <?php
+                if (!empty($_REQUEST)) {
+                    if(empty($_REQUEST['email'])) {
+                        echo "<p class='warning'>'Email' required.</p>";
+                    } else {
+                        $fnlength = strlen($_REQUEST['email']);
+                        if ($fnlength < 3 || $fnlength > 50) {
+                            echo "<span>'Email' can not be less than 2 and more than 30 characters.</span>";
+                        }
+                    }
+                }
+                ?>
+                </label>
                 <span>Use only your own Email address, in case the password is lost it will be sent an email with instructions to reset.</span>
             </div>
             <div class="pass">
                 <h4>Password</h4>
-                <input type="password" name="pass">
+                <label class="<?= (!empty($_REQUEST) && (empty($_REQUEST['password']) ||
+                        (strlen($_REQUEST['password']) > 4 ))) ? "warning" : "" ?>">
+                    <input type="password" name="password" class="<?= empty($_REQUEST['password']) ? "warning" : ""?>"
+                           value="<?= !empty($_REQUEST['password']) ? $_REQUEST['password'] : ""; ?>">
+                    <?php
+                    if (!empty($_REQUEST)) {
+                        if(empty($_REQUEST['password'])) {
+                            echo "<p class='warning'>'Password' required.</p>";
+                        } else {
+                            $fnlength = strlen($_REQUEST['password']);
+                            if ($fnlength < 3 || $fnlength > 50) {
+                                echo "<span>'Password' can not be less than 4 characters.</span>";
+                            }
+                        }
+                    }
+                    ?>
+                </label>
                 <span>At least 4 characters. We recommend to choose a strong password to protect your account from cracking.</span>
             </div>
             <div class="sign-up">
