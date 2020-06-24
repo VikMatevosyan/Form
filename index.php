@@ -321,18 +321,52 @@
 
         <form action="">
             <div class="img">
-                <img src="Computer-Icons-User-Profile-Clip-Art-Web-User-Icon-720x720.jpg" alt="">
+                <img src="img/iconmonstr-user-19.svg" alt="">
             </div>
             <div>
-                <label for="login" class="log">Login</label><br>
-                <input type="text" id="login" name="login" placeholder="Email or login"><br>
+                <label for="login" class="log <?= (!empty($_REQUEST) && (empty($_REQUEST['login']) ||
+                        (strlen($_REQUEST['login']) < 10 || strlen($_REQUEST['login']) > 20)))? "warning" : "" ?>">Login<br>
+                <input type="text" id="login" name="login" placeholder="Email or login" class="<?= empty($_REQUEST['login']) ? "warning" : ""?>"
+                       value="<?= !empty($_REQUEST['login']) ? $_REQUEST['login'] : "" ?>">
+                    <?php
+                    if (!empty($_REQUEST)) {
+                        if(empty($_REQUEST['login'])) {
+                            echo "<span class='warning'>'Login' required.</span>";
+                        } else {
+                            $fnlength = strlen($_REQUEST['login']);
+                            if ($fnlength < 10 || $fnlength > 20) {
+                                echo "<span class='warning'>'Login' can not be less than 10 and more than 20 characters.</span>";
+                            }
+                        }
+                    }
+                    ?>
+                </label>
             </div>
+
             <div>
                 <p>You can use Email or login</p>
             </div>
-            <div>
-                <label for="password" class="log">Password</label><br>
-                <input type="password" id="password" name="password" placeholder="Password">
+            <div class="div">
+                <label for="password" class="log <?= (!empty($_REQUEST) && (empty($_REQUEST['password']) ||
+                        (strlen($_REQUEST['password']) < 2 || strlen($_REQUEST['password']) > 20)))? "warning" : "" ?>">Password<br></label>
+                <input type="password" id="password" name="password" placeholder="Password" class="<?= empty($_REQUEST['password']) ? "warning" : ""?>"
+                       value="<?= !empty($_REQUEST['password']) ? $_REQUEST['password'] : "" ?>">
+                <?php
+                if (!empty($_REQUEST)) {
+                    if(empty($_REQUEST['password'])) {
+                        echo "<span class='warning'>'Password' required.</span>";
+                    } else {
+                        $fnlength = strlen($_REQUEST['password']);
+                        if ($fnlength < 2 || $fnlength > 20) {
+                            echo "<span class='warning'>'Password' can not be less than 2 and more than 30 characters.</span>";
+                        }
+                    }
+                }
+                ?>
+              <div class="icon">
+                  <img src="img/iconmonstr-eye-9.svg" class="eye" alt="" onclick="passwordVisible()">
+              </div>
+
             </div>
             <div class="sign-login">
                 <input type="submit" value="Sign in" class="sign-log">
@@ -476,6 +510,7 @@
                     }
                     ?>
                 </label>
+                    <img src="img/iconmonstr-eye-9.svg" class="eye" alt="" onclick="passwordVisible()">
                 <span>At least 4 characters. We recommend to choose a strong password to protect your account from cracking.</span>
             </div>
             <div class="sign-up">

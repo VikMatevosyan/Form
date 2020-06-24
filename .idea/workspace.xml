@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d48055c-8076-4c77-a68e-9362d0a532e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/img/59-593921_png-file-svg-password-eye-icon-png-transparent.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/136-1366211_group-of-10-guys-login-user-icon-png.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/136-1366211_group-of-10-guys-login-user-icon-png.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Computer-Icons-User-Profile-Clip-Art-Web-User-Icon-720x720.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/img/Computer-Icons-User-Profile-Clip-Art-Web-User-Icon-720x720.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +68,8 @@
       <workItem from="1592583126896" duration="1081000" />
       <workItem from="1592724150485" duration="2293000" />
       <workItem from="1592827835674" duration="186000" />
-      <workItem from="1592912220328" duration="1558000" />
+      <workItem from="1592912220328" duration="1607000" />
+      <workItem from="1592989459380" duration="2332000" />
     </task>
     <servers />
   </component>
